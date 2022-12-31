@@ -1,7 +1,8 @@
-const http = require('http');
+const express = require('express');
 const fs = require('fs');
 
-const hostname = 'localhost';
+const app = express();
+
 const port = 8080;
 
 const readFile = (path) => {
@@ -21,12 +22,12 @@ const readFile = (path) => {
     }
 }
 
-const server = http.createServer((req, res) => {
-    const path = req.url;
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/html');
-    res.end(readFile(path));
-});
+app.get('/', (req, res) => res.sendFile(`${__dirname}/index.html`));
 
+app.get('/about', (req, res) => res.sendFile(`${__dirname}/about.html`));
 
-server.listen(port, hostname, () => console.log(`Server running at http://${hostname}:${port}/`));
+app.get('/contact', (req, res) => res.sendFile(`${__dirname}/contact-me.html`));
+
+app.use((req, res, next) => res.status(404).sendFile(`${__dirname}/404.html`));
+
+app.listen(port, () => console.log(`Server running at http://localhost:${port}/`));
