@@ -1,6 +1,6 @@
 # node-basic-informational-site
 
-[Live Demo]()
+[Live Demo](https://node-basic-informational-site-1.ashish-krishnak.repl.co/)
 
 A barebones site with html for practicing node. Built as part of [The Odin Project's](https://www.theodinproject.com/dashboard) Node course.
 
