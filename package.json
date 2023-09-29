@@ -3,20 +3,17 @@
   "version": "1.0.0",
   "description": "A barebones site with html for practicing node.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Ashish-Krishna-K/node-basic-informational-site.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc --watch && nodemon index.js",
+    "build": "tsc"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Ashish-Krishna-K/node-basic-informational-site/issues"
-  },
-  "homepage": "https://github.com/Ashish-Krishna-K/node-basic-informational-site#readme",
-  "dependencies": {
-    "express": "^4.18.2"
+  "devDependencies": {
+    "@types/node": "^20.7.1",
+    "nodemon": "^3.0.1",
+    "typescript": "^5.2.2"
   }
 }
